@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+    --header-outer-height: 110px;
+    --header-inner-height: 70px;
+    --header-height-difference: calc(var(--header-outer-height) - var(--header-inner-height));
+    --header-bg: #ffffff; /* Cor branca para o fundo do cabeçalho */
+    --footer-bg: #ffffff; /* Cor branca para o fundo do rodapé */
+    --text-color: #000000; /* Cor do texto do cabeçalho e rodapé */
+    --background-color: #f2f5f7; /* Cor de fundo da página */
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--background-color);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.responsive-wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sticky header */
+.header-outer {
+    height: var(--header-outer-height);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #f2f2f2 0%, #eaeaea 76%);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 100%; /* Garante que o cabeçalho preencha toda a largura da página */
+}
+
+.header-inner {
+    height: var(--header-inner-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Garante que o conteúdo interno também preencha a largura */
+}
+
+/* Styling of other elements */
+.header-logo img {
+    display: block;
+    height: calc(var(--header-inner-height) - 30px);
+}
+
+.header-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header-navigation a,
+.header-navigation button {
+    font-size: 1.125rem;
+    color: var(--text-color); /* Cor do texto do cabeçalho */
+    margin-left: 1.75rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.header-navigation a {
+    display: none;
+    font-size: 1.125rem;
+    color: var(--text-color); /* Cor do texto do cabeçalho */
+    text-decoration: none;
+}
+
+.header-navigation button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+    transform: scalex(1);
+}
+
+.header-navigation a:after,
+.header-navigation button:after {
+    transition: 0.25s ease;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentcolor;
+    transform: scalex(0);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+@media (min-width: 800px) {
+    .header-navigation a {
+        display: inline-block;
+    }
+
+    .header-navigation button {
+        display: none;
+    }
+}
+
+/* Popup para o menu de usuário */
+.popup {
+    position: absolute; /* Garante que o popup seja posicionado relativamente ao seu contêiner pai */
+    top: 100%; /* Posiciona o popup logo abaixo do ícone de usuário */
+    left: 0; /* Alinha o popup ao lado esquerdo do ícone de usuário */
+    background-color: white; /* Adiciona um fundo branco ao popup */
+    border: 1px solid #ccc; /* Adiciona uma borda ao popup */
+    padding: 10px; /* Adiciona algum espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra para maior destaque */
+    z-index: 1000; /* Garante que o popup esteja sobre outros elementos */
+    display: none;
+	margin-top: 100px; /* Adiciona o espaçamento adicional acima do rodapé */
+
+}
+
+.popup a {
+    text-decoration: none;
+    color: #121331;
+    font-weight: 500;
+}
+
+.popup a:hover {
+    text-decoration: underline;
+}
+
+/* Classe que oculta o popup */
+.popup.hidden {
+    display: none;
+}
+
+.popup:not(.hidden) {
+    display: block;
+}
+
+/* Centraliza o ícone com o popup */
+#user-icon {
+    position: relative;
+}
+
+#user-icon:hover + .popup {
+    display: none;
+}
+
+/* Centralizar o popup em relação ao ícone de usuário */
+#user-popup {
+    position: absolute; /* Posiciona o popup em relação ao ícone */
+    top: 100%; /* Coloca o popup imediatamente abaixo do ícone */
+    left: 50%; /* Alinha o popup à esquerda do ícone */
+    margin-top: 16px; /* Espaçamento entre o ícone e o popup */
+    display: none; /* Inicialmente escondido */
+    background-color: white; /* Cor de fundo do popup */
+    border: 1px solid #ccc; /* Borda do popup */
+    padding: 15px; /* Espaçamento interno do popup */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Sombra para dar destaque */
+    z-index: 1000; /* Garante que o popup esteja acima de outros elementos */
+	border-radius: 5px;
+}
+
+#user-popup * {
+	text-decoration: none;
+	font-size: 16px;
+}
+
+#edit-profile-link{
+	margin-bottom: 10px;
+}
+
+footer {
+    background: linear-gradient(145deg, #f2f2f2 0%, #eaeaea 76%);
+    color: var(--text-color); /* Cor do texto */
+    text-align: center;
+    padding: 10px; /* Ajusta o padding conforme necessário */
+    box-sizing: border-box; /* Inclui padding e border na altura total */
+    width: 100%;
+    height: var(--header-outer-height); /* Mantém a mesma altura que o cabeçalho */
+    position: relative; /* Para garantir que o footer esteja posicionado corretamente */
+    bottom: 0;
+    margin-top: 20px; /* Adiciona o espaçamento adicional acima do rodapé */
+}
+
+
+@media (min-width: 800px) {
+    .header-navigation a {
+        display: inline-block;
+    }
+
+    .header-navigation button {
+        display: none;
+    }
+}

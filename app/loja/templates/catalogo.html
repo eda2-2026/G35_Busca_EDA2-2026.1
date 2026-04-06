@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+   <link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+   <h1>Bem-vindo ao Catálogo de Bolos</h1>
+   <div class="search-container">
+       <input type="text" id="search" placeholder="Buscar por bolo...">
+       <button id="search-btn">Buscar</button>
+   </div>
+</header>
+
+<meta name="csrf-token" content="{{ csrf_token }}">
+
+<div class="container">
+   
+<aside class="sidebar">
+    <h2>Categorias</h2>
+    <div class="categoria-lista">
+        <h3>Bolos Tradicionais:</h3>
+        <ul>
+            <li><label for="bolo-cenoura">Bolo de Cenoura</label></li>
+            <li><label for="bolo-milho">Bolo de Milho</label></li>
+            <li><label for="bolo-fuba">Bolo de Fubá</label></li>
+        </ul>
+ 
+        <h3>Bolos Recheados:</h3>
+        <ul>
+            <li><label for="morango-deuses">Morango dos Deuses</label></li>
+            <li><label for="prestigio">Prestígio</label></li>
+            <li><label for="brigadeiro">Brigadeiro</label></li>
+        </ul>
+ 
+        <h3>Tamanhos:</h3>
+        <ul>
+            <li><label for="tamanho-grande">Grande</label></li>
+            <li><label for="tamanho-medio">Médio</label></li>
+            <li><label for="tamanho-pequeno">Pequeno</label></li>
+        </ul>
+    </div>
+</aside>
+
+   <div id="catalogo">
+       <section class="categoria">
+           <div class="card-container">
+               {% if bolos %}
+                   {% for bolo in bolos %}
+                   <div class="card">
+                       <img src="{{ bolo.imagem_url }}" alt="{{ bolo.sabor }}">
+                       <h3>{{ bolo.sabor }}</h3>
+                       <p class="preco">R$ <span class="preco-dinamico">{{ bolo.preco_pequeno }}</span></p>
+                       <p class="tamanho">Tamanhos:</p>
+                       <select class="tamanho-select">
+                           <option value="P" data-preco="{{ bolo.preco_pequeno }}">Pequeno - R$ {{ bolo.preco_pequeno }}</option>
+                           <option value="M" data-preco="{{ bolo.preco_medio }}">Médio - R$ {{ bolo.preco_medio }}</option>
+                           <option value="G" data-preco="{{ bolo.preco_grande }}">Grande - R$ {{ bolo.preco_grande }}</option>
+                       </select>
+                       <button class="botao-comprar" data-product-id="{{ bolo.id }}" data-product="{{ bolo.sabor }}">Comprar</button>
+                   </div>
+                   {% endfor %}
+               {% else %}
+                   <div class="vazio">
+                       <p>Nenhum bolo disponível no catálogo.</p>
+                   </div>
+               {% endif %}
+           </div>
+       </section>
+   </div>
+
+   <aside id="carrinho" class="carrinho">
+       <h2>Carrinho de Compras</h2>
+       <div id="carrinho-itens"></div>
+       <p>Total: <span id="total">R$ 0,00</span></p>
+    <a href="{% url 'basket' %}" id="visualizar-carrinho" class="botao-comprar visualizar-carrinho">Visualizar Carrinho</a>
+   </aside>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/catalogo.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+{% endblock %}
