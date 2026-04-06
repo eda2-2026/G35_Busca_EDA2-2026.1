@@ -43,6 +43,17 @@ A ideia foi unir teoria e prática, criando uma aplicação funcional com uma bu
   ### Vantagem  e Desempenho
   Por ser uma estrutura multidirecional, a busca não depende do número total de itens no catálogo ($n$), mas apenas do comprimento do termo digitado ($k$).Busca em Banco Comum (SQL): Geralmente $O(n)$, exigindo varredura completa da tabela.Busca na Trie: $O(k)$. Isso garante que a sugestão de bolos seja instantânea, independentemente do tamanho da base de dados.
 
+## Screenshots
+• Esta imagem mostra o usuário digitando "pesse" (sem maiúscula e sem acento). O sistema reage in.stantaneamente, mostrando "Bolo de Pêssego" corretamente formatado.
+
+
+
+•Esta imagem mostra o usuário digitando "Bolo de c" (com 'c' minúsculo e 'Bolo' maiúsculo). A busca reage instantaneamente, mostrando uma lista de sugestões que completam o prefixo.
+
+
+
+•Esta imagem mostra o usuário digitando "moran" (com 'm' minúsculo). A busca reage instantaneamente, mostrando uma lista de sugestões relevantes baseadas no termo, mesmo que ele esteja no meio da string.
+
 
 ## Tecnologias utilizadas:
 • Backend: Python / Django (Conceitos de CRUD, Serialização, POO).
@@ -83,8 +94,10 @@ http://localhost:8000
 
 ## Integrantes da Equipe
 
-| <span style="color:black;">[Geovanna Umbelino](https://github.com/GeovannaUmbelino)</span>            | <span style="color:black;">[Sunamita Vitória](https://github.com/Sunamit)</span>              |
-------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | 
-| <div align="center"><img src="https://github.com/GeovannaUmbelino.png" alt="geovanna" width="90"></div> | <div align="center"><img src="https://github.com/Sunamit.png" alt="sunamita" width="90"></div> | 
+|  |Matrícula | Aluno |  
+|-- | -- | -- |
+|  <div align="center"><img src="https://github.com/GeovannaUmbelino.png" alt="geovanna" width="90"></div>  | 23/2014450  | <span style="color:black;">[Geovanna Umbelino](https://github.com/GeovannaUmbelino)</span>   |
+| <div align="center"><img src="https://github.com/Sunamit.png" alt="sunamita" width="90"></div> | 22/1008697  | <span style="color:black;">[Sunamita Vitória](https://github.com/Sunamit)</span>    |
+
 
 
