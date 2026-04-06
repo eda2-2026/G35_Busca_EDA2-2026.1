@@ -19,7 +19,6 @@ class _Node:
 
 
 class Trie:
-    """Trie que guarda payloads por palavra e busca por prefixo."""
 
     def __init__(self):
         self.root = _Node()

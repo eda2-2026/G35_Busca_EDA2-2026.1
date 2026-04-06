@@ -46,13 +46,15 @@ A ideia foi unir teoria e prática, criando uma aplicação funcional com uma bu
 ## Screenshots
 • Esta imagem mostra o usuário digitando "pesse" (sem maiúscula e sem acento). O sistema reage in.stantaneamente, mostrando "Bolo de Pêssego" corretamente formatado.
 
-
+![1](./app/static/images/Captura%20de%20tela%202026-04-06%20171153.png)
 
 •Esta imagem mostra o usuário digitando "Bolo de c" (com 'c' minúsculo e 'Bolo' maiúsculo). A busca reage instantaneamente, mostrando uma lista de sugestões que completam o prefixo.
 
-
+![2](./app/static/images/Captura%20de%20tela%202026-04-06%20171108.png)
 
 •Esta imagem mostra o usuário digitando "moran" (com 'm' minúsculo). A busca reage instantaneamente, mostrando uma lista de sugestões relevantes baseadas no termo, mesmo que ele esteja no meio da string.
+
+![3](./app/static/images/Captura%20de%20tela%202026-04-06%20171320.png)
 
 
 ## Tecnologias utilizadas:

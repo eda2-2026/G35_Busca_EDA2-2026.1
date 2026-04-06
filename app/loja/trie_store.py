@@ -11,7 +11,6 @@ _TRIE: Optional[Trie] = None
 
 
 def get_trie(data_path: Optional[str] = None) -> Trie:
-    """Retorna a trie carregada em memória"""
     global _TRIE
     if _TRIE is not None:
         return _TRIE
