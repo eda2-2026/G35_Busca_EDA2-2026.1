@@ -93,6 +93,9 @@ http://localhost:8000
 
 <br>
 
+## Vídeo
+
+[Projeto de EDA2 - Sistema de Busca com Trie ](https://youtu.be/lFahU0GUPrY)
 
 ## Integrantes da Equipe
 
